@@ -5,21 +5,21 @@
       <span class="like-title">猜你喜欢</span>
     </div>
     <ul class="like-group-list">
-      <li class="like-group-item">
+      <li class="like-group-item" v-for="item of likeList" :key="item.id">
         <a class="like-fulllink" href="">
           <div class="like-fulllink-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)">
             可订明日
           </div>
           <div class="like-fulllink-img-con">
-            <img class="like-fulllink-img" src="http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg" alt="">
+            <img class="like-fulllink-img" :src="item.imgUrl" alt="">
           </div>
           <div class="like-fulllink-info">
             <div class="like-fulllink-info-title">
-              金海湖风景区
+              {{ item.title }}
             </div>
             <div class="like-fulllink-info-comment">
               <div class="info-comment-star">
-                <div class="star-rating-top" v-bind:style="{width: starRating(4.5)}">
+                <div class="star-rating-top" v-bind:style="{width: starRating(item.rating)}">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -34,53 +34,13 @@
                   <span></span>
                 </div>
               </div>
-              <span class="info-comment-count">1406条评论</span>
+              <span class="info-comment-count">{{ item.comment }}条评论</span>
             </div>
             <div class="like-fulllink-info-price">
               <span class="info-price">
                 <span class="yuan">&yen;</span>
-                <em class="price">24</em> 起</span>
-              <span class="info-location">平谷区</span>
-            </div>
-          </div>
-        </a>
-      </li>
-            <li class="like-group-item">
-        <a class="like-fulllink" href="">
-          <div class="like-fulllink-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)">
-            可订明日
-          </div>
-          <div class="like-fulllink-img-con">
-            <img class="like-fulllink-img" src="http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg" alt="">
-          </div>
-          <div class="like-fulllink-info">
-            <div class="like-fulllink-info-title">
-              金海湖风景区
-            </div>
-            <div class="like-fulllink-info-comment">
-              <div class="info-comment-star">
-                <div class="star-rating-top" v-bind:style="{width: starRating(4.5)}">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div class="star-rating-bottom">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <span class="info-comment-count">1406条评论</span>
-            </div>
-            <div class="like-fulllink-info-price">
-              <span class="info-price">
-                <span class="yuan">&yen;</span>
-                <em class="price">24</em> 起</span>
-              <span class="info-location">平谷区</span>
+                <em class="price">{{ item.price }}</em> 起</span>
+              <span class="info-location">{{ item.location }}</span>
             </div>
           </div>
         </a>
@@ -92,6 +52,9 @@
 <script>
 export default {
   name: 'HomeLike',
+  props: {
+    likeList: Array
+  },
   filters: {
     rmb: function (value) {
       return '&yen;' + value
@@ -99,7 +62,6 @@ export default {
   },
   methods: {
     starRating: function (value) {
-      console.log((value / 5) * 100)
       return (value / 5) * 100 + '%'
     }
   }
@@ -181,6 +143,7 @@ export default {
                 position: relative;
                 padding: 0;
                 text-shadow: 0px 1px 0 #a2a2a2;
+                display : table
 
                 span
                   padding: 2px;

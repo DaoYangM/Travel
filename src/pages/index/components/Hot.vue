@@ -33,19 +33,11 @@
 <script>
 export default {
   name: 'HomeHot',
+  props: {
+    hotList: Array
+  },
   data: function () {
     return {
-      hotList: [
-        {id: '001', imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg', sight: '故宫', price: '20', rankImg: 'http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png'},
-        {id: '002', imgUrl: 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_150x150_2dec3e78.jpg', sight: '八达岭长城', price: '40', rankImg: 'http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png'},
-        {id: '003', imgUrl: 'http://img1.qunarzz.com/sight/p0/201306/13/bdf22f69fab0ee4ec8d65eac.jpg_150x150_35b4b15f.jpg', sight: '八达岭长城缆车', price: '160', rankImg: 'http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png'},
-        {id: '004', imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_150x150_2747e538.jpg', sight: '颐和园', price: '40', rankImg: ''},
-        {id: '005', imgUrl: 'http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_150x150_8a63d940.jpg', sight: '水立方', price: '14', rankImg: ''},
-        {id: '006', imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_150x150_2a3c9117.jpg', sight: '圆明园', price: '9.8', rankImg: ''},
-        {id: '007', imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_150x150_27594131.jpg', sight: '北京欢乐谷', price: '29.9', rankImg: ''},
-        {id: '008', imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_150x150_e7957917.jpg', sight: '北京野生动物园', price: '71', rankImg: ''}
-
-      ]
     }
   },
   filters: {
