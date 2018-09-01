@@ -102,6 +102,7 @@ export default {
         display : flex
         justify-content : center
         align-items : center
+
         flex-direction : column
         padding-top : 0.1rem
 
@@ -138,6 +139,7 @@ export default {
       width : 50%
 
   .map-activity-con
+
     height : 1.8rem
     display : flex
     border-bottom : .2rem solid #eee
