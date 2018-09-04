@@ -2,7 +2,7 @@
     <div class="header">
       <div class="header-left"><div class="iconfont back-icon">&#xe624;</div></div>
       <div class="header-input"><span class="iconfont icon-sousuo"></span> 输入城市/景点/游玩主题</div>
-      <div class="header-right"><span class="iconfont icon-arrow-down"></span> {{ city }}</div>
+      <div class="header-right"><span class="iconfont icon-arrow-down"></span><router-link to="/city">{{ city }}</router-link></div>
     </div>
 </template>
 
@@ -17,6 +17,9 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/variables.styl';
+  a
+    color : #ffffff
+
   .header
     display : flex
     justify-content : center
@@ -42,7 +45,8 @@ export default {
       padding-left : .2rem
 
     .header-right
-      width : 1.24rem
+      // width : 1.24rem
       text-align : center
+      margin : 0 .2rem
       color : #ffffff;
 </style>

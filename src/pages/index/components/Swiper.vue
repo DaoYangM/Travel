@@ -25,9 +25,6 @@ export default {
         loop: true
       }
     }
-  },
-  mounted () {
-    console.log('123' + this.swiperList)
   }
 }
 </script>

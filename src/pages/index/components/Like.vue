@@ -11,7 +11,7 @@
             可订明日
           </div>
           <div class="like-fulllink-img-con">
-            <img class="like-fulllink-img" :src="item.imgUrl" alt="">
+            <router-link :to="'/detail/'+ item.id"><img class="like-fulllink-img" :src="item.imgUrl" alt=""></router-link>
           </div>
           <div class="like-fulllink-info">
             <div class="like-fulllink-info-title">

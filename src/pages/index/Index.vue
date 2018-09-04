@@ -22,7 +22,7 @@ export default {
   name: 'Index',
   data () {
     return {
-      city: '',
+      lastCity: '',
       swiperList: [],
       iconList: [],
       hotList: [],
@@ -36,13 +36,27 @@ export default {
     HomeHot,
     HomeLike
   },
+  computed: {
+    city () {
+      return this.$store.state.city
+    }
+  },
   mounted () {
     axios.get('/api/index.json')
       .then(this.printContent)
+    this.lastCity = this.city
+    console.log('mounted')
+  },
+  activated () {
+    if (this.lastCity !== this.$store.state.city) {
+      axios.get('/api/index.json')
+        .then(this.printContent)
+      console.log('activited city change')
+      this.lastCity = this.city
+    }
   },
   methods: {
     printContent: function (value) {
-      this.city = value.data.data.city
       this.swiperList = value.data.data.swiperList
       this.iconList = value.data.data.iconList
       this.hotList = value.data.data.hotList
